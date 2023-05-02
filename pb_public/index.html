@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-2-document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div>문자
+            <input id="text" onkeyup="printText()">
+            <input type="submit" value="제출">
+        </div>
+
+        <div>숫자
+            <input id="number" onkeyup="printNumber()">
+            <input type="submit" value="제출">
+        </div>
+
+        <form id="myForm">
+            <div class="form-group">
+              <label for="myFileInput">이미지</label>
+              <input type="file" id="myFileInput" name="myFileInput" />
+              <div class="image-preview"></div>
+              <button type="button" id="previewBtn">미리보기</button>
+              <input type="submit" value="제출">
+            </div>
+        </form>
+
+        <div class="video">동영상
+            <input id="video" type="file" accept="video/*" onchange="previewVideo()">
+            <input type="submit" value="0초로 돌아가" onclick="resetVideo() , previewVideo()">
+        </div>
+
+        <div class="video-preview">
+            <video width="500" height="400" controls></video>
+        </div>
+
+        <button id="my-button">Show My Info</button>
+        <div id="my-info"></div>
+
+    </div>
+
+    <script src="script.js">
+
+    </script>
+</body>
+
+</html>
