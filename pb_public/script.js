@@ -4,23 +4,23 @@ const previewContainer = document.querySelector(".image-preview");
 const myButton = document.getElementById('my-button');
 const myInfoDiv = document.getElementById('my-info');
 
-myButton.addEventListener('click', function() {
+myButton.addEventListener('click', function () {
     const my = {
-      "name": "JOE YOUNG JAE",
-      "age": 25,
-      "isMarried": false,
-      "hobbies": ["pc-game", "youtube-watching", "travel"],
-      "address": {
-         "street": "iksandaero 460",
-         "city": "iksan",
-         "state": "junrabokdo",
-         "zip": "313"
-      }
+        "name": "JOE YOUNG JAE",
+        "age": 25,
+        "isMarried": false,
+        "hobbies": ["pc-game", "youtube-watching", "travel"],
+        "address": {
+            "street": "iksandaero 460",
+            "city": "iksan",
+            "state": "junrabokdo",
+            "zip": "313"
+        }
     };
-    
+
     const myJson = JSON.stringify(my, null, 2);
     myInfoDiv.innerHTML = '<pre>' + myJson + '</pre>';
-  });
+});
 
 // 제출 버튼 클릭 이벤트 핸들러
 document.getElementById('myForm').addEventListener('submit', function (e) {
@@ -84,4 +84,3 @@ function resetVideo() {
     const video = document.querySelector('.video-preview video');
     video.currentTime = 0;
 }
-

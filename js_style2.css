@@ -1,0 +1,9 @@
+table {
+    border-collapse: collapse; /* 테이블 경계 합병 */
+  }
+  
+  td, th {
+    border: 1px solid black; /* 셀 경계 라인 설정 */
+    padding: 5px; /* 셀 내부 간격 설정 */
+    text-align: center; /* 셀 텍스트 가운데 정렬 */
+  }

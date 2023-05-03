@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인사말</title>
+</head>
+
+<body>
+    <button id="myButton">버튼</button>
+    <script type="text/javascript">
+        var myButton = document.getElementById("myButton");
+        var count = 0;
+        myButton.addEventListener("click", function () {
+            count++;
+            if (count === 2) {
+                var title1 = "멀티미디어 배움터2.0";
+                var title2 = "모바일 멀티미디어";
+                var title3 = "자바입문: 이론과 실습";
+                document.write("<table>");
+                document.write("<caption> 베스트셀러 </caption>");
+                document.write("<tr>");
+                document.write("<th> 순위 </th>");
+                document.write("<th> 제목 </th>");
+                document.write("</tr>");
+                document.write("<tr> <td> 1 </td> <td> " + title1 + " </td> </tr>");
+                document.write("<tr> <td> 2 </td> <td> " + title2 + " </td> </tr>");
+                document.write("<tr> <td> 3 </td> <td> " + title3 + " </td> </tr>");
+                count = 0;
+                alert("페이지가 정상적으로 응답했음.");
+
+                var answer = confirm("페이지의 테이블이 나왔습니까?");
+                document.write("<span style='font-weight: bold;'>답변: " 
+                    + answer.toString().toUpperCase() + "</span><br/>");
+            } else if (Math.random() < 0.1) {
+                count = 0;
+                alert("랜덤하게 0이 되었습니다.");
+            } else {
+                alert("버튼을 더 누르세요 + " + (2 - count));
+            }
+        });
+
+    </script>
+</body>
+
+</html>

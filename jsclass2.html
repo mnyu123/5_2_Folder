@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="js_style2.css">
+    <title>인사말</title>
+</head>
+
+<body>
+    <button id="myButton">버튼</button>
+    <table id="myTable"></table>
+    <script type="text/javascript">
+        var myButton = document.getElementById("myButton");
+        var myTable = document.getElementById("myTable");
+        var count = 0;
+        myButton.addEventListener("click", function () {
+            count++;
+            if (count === 2) {
+                var title1 = "멀티미디어 배움터2.0";
+                var title2 = "모바일 멀티미디어";
+                var title3 = "자바입문: 이론과 실습";
+                var htmlString = "<caption> 베스트셀러 </caption>";
+                htmlString += "<tr>";
+                htmlString += "<th> 순위 </th>";
+                htmlString += "<th> 제목 </th>";
+                htmlString += "</tr>";
+                htmlString += "<tr> <td> 1 </td> <td> " + title1 + " </td> </tr>";
+                htmlString += "<tr> <td> 2 </td> <td> " + title2 + " </td> </tr>";
+                htmlString += "<tr> <td> 3 </td> <td> " + title3 + " </td> </tr>";
+                myTable.innerHTML = htmlString;
+                count = 0;
+            } else if (Math.random() < 0.1) {
+                count = 0;
+                alert("랜덤하게 0이 되었습니다.");
+            } else {
+                alert("버튼을 더 누르세요 + " + (2 - count));
+            }
+        });
+    </script>
+</body>
+
+</html>
