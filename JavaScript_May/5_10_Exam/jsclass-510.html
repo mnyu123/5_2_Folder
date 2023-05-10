@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트처리</title>
+</head>
+
+<body>
+    <!-- <form>
+        <input type="button" value="예" onmouseover="alert('마우스를 여기다 올려?!')" onclick="alert('예를 누르셨습니다.');" />
+        <input type="button" value="아니오" onclick="alert('아니오를 누르셨습니다.');" />
+    </form> -->
+
+    <!-- <form action="">
+        <input id="username" type="text" value="Name of User 1" onclick="alert('Please type your full name');" />
+    </form> -->
+
+    <!-- 위의 이벤트 처리를 명시적으로 풀어서 쓴 내용 -->
+    <!-- 내가 생성한 이벤트처리 메소드로 이벤트 처리 -->
+
+    <!-- <form action="">
+        <input id="user" type="text" value="Name of User 2" onclick="myEventHandler1();" />
+    </form> -->
+    
+    <!-- <script type="text/javascript">
+        function myEventHandler1() {
+            prompt("Please type your full name");
+        }
+    </script> -->
+
+    <!-- dom 이벤트 처리 -->
+    <!-- <form action="">
+        <input id="username2" type="text" value="Name of User 3" />
+    </form> -->
+
+    <!-- <script type="text/javascript">
+        function myEventHandler2() {
+            alert("Please type your full name");
+        }
+        var dom = document.getElementById("username2");
+        dom.onclick = myEventHandler2;
+    </script> -->
+
+    <!-- 자바스크립트에 이미 존재하는 함수 -->
+    <script type="text/javascript">
+        var stopped = false;
+        function start() {
+            dom = document.getElementById("sec");
+            dom.value = parseFloat(dom.value) + 0.1;
+            if (!stopped) setTimeout(start, 100);
+                                // start함수는 1초(1000ms)후에 실행함
+            // closure 구조임 (호출하는 함수에 자기 함수 이름이 밖에 있음)
+        }
+    </script>
+    <h2> Stopwatch </h2>
+    <form action="">
+        <input type="button" value="Start" onclick="stopped=false; 
+        setTimeout(start,1000);" />
+        <input type="button" value="Stop" onclick="stopped=true;" />
+        <input type="reset" /> <br><br>
+        <input id="sec" type="text" value="0" size="2" /> seconds
+    </form>
+</body>
+
+</html>

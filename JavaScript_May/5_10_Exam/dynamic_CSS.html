@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS의 속성이 바뀔거에요</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        function toggleVisibility(id) {
+            var dom = document.getElementById(id);
+            if (dom.style.visibility == "visible")
+                dom.style.visibility = "hidden";
+            else
+                dom.style.visibility = "visible";
+        }
+    </script>
+
+    <!-- 버튼을 누르면 이미지가 보이고,숨겨지고(스타일 변경) -->
+
+    Toggle Visibility:
+    <button onclick="toggleVisibility('img1');">Image 1</button>
+    <button onclick="toggleVisibility('img2');">Image 2</button>
+    <button onclick="toggleVisibility('img3');">Image 3</button>
+
+    <hr> <!--수평선을 주는 html문서-->
+    <div>
+        <img src="./Ocean.jpg" id="img1" style="width:300px; position: absolute;">
+        <img src="./Ocean2.jpg" id="img2" style="width:300px; position: absolute;">
+        <img src="./Sebu.jpg" id="img3" style="width:300px; position: absolute;">
+    </div>
+
+
+
+
+
+
+    <!-- 색상 변경 -->
+    <script type="text/javascript">
+        function changeColor(id, color) {
+            document.getElementById(id).style.background = color;
+        }
+    </script>
+
+
+    <br />
+
+    <div id="outerBox" style="width:300px; height: 300px;">
+        Outer Box:
+        <button onclick="changeColor('outerBox', 'red');"> Red </button>
+        <button onclick="changeColor('outerBox', 'green');"> Green </button>
+        <button onclick="changeColor('outerBox', 'blue');"> Blue </button>
+
+
+        <div id="innerBox" style="width:150px; height: 150px; margin:65px">
+            Inner Box:
+            <button onclick="changeColor('innerBox', 'red');"> Red </button>
+            <button onclick="changeColor('innerBox', 'green');"> Green </button>
+            <button onclick="changeColor('innerBox', 'blue');"> Blue </button>
+        </div>
+    </div>
+    <br />
+    <!-- 색상 변경 코드 종료 -->
+
+
+
+
+    <!-- 포지션 변경 -->
+    <script type="text/javascript">
+        function changePositions() {
+            for (i = 1; i <= 3; i++) {
+                var left = document.getElementById("left" + i).value;
+                var top = document.getElementById("top" + i).value;
+                document.getElementById("img" + i).style.left = left + "px";
+                document.getElementById("img" + i).style.top = top + "px";
+            }
+        }
+    </script>
+    <form>
+
+        Image1: Left <input id="left1" size="2" type="text" />
+
+        Top <input id="top1" size="2" type="text" /> <br />
+
+        Image2: Left <input id="left2" size="2" type="text" />
+
+        Top <input id="top2" size="2" type="text" /> <br />
+
+        Image3: Left <input id="left3" size="2" type="text" />
+
+        Top <input id="top3" size="2" type="text" />
+
+        <input type="button" value="Move All [함수동작 버튼]" onclick="changePositions();" />
+
+    </form>
+</body>
+
+</html>

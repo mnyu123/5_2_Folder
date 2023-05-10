@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 다루기</title>
+</head>
+
+<body>
+    <form>
+        <input id="op1" type="text" size="2" />+
+        <input id="op2" type="text" size="2" />
+        <input type="button" value="=" onclick="add();" />
+        <input id="result" type="text" size="2" />
+    </form>
+
+    <script type="text/javascript">
+        function add() {
+            var a = document.getElementById("op1").value;
+            var b = document.getElementById("op2").value;
+            document.getElementById("result").value = a +
+                b;
+                // 왜 int로 바꾸는가? -> 기본적으로 모든 자바스크립트는
+                // 문자로 계산을 함 ex) 55+1 = 651(66이 아님)
+        }
+    </script>
+</body>
+
+</html>
