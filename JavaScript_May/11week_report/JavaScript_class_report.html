@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Prac</title>
+    <script>
+        //이름과 학번을 입력받음
+        function inputNameAndNum() {
+            var name = prompt("이름을 입력하세요");
+            var num = prompt("학번을 입력하세요");
+            document.getElementById("name").value = name;
+            document.getElementById("num").value = num;
+        }
+        //비디오 재생, 일시정지, 정지, 비디오 불러오기
+        function playVideo(){
+            var video = document.getElementById("video");
+            video.play();
+        }
+        function pauseVideo(){
+            var video = document.getElementById("video");
+            video.pause();
+        }
+        function stopVideo(){
+            var video = document.getElementById("video");
+            video.load();
+        }
+        //오디오 재생, 일시정지, 정지, 비디오 불러오기
+        function playAudio(){
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+        function pauseAudio(){
+            var audio = document.getElementById("audio");
+            audio.pause();
+        }
+        function stopAudio(){
+            var audio = document.getElementById("audio");
+            audio.load();
+        }
+        function loadVideo() {
+            var fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = 'video/*';
+            fileInput.addEventListener('change', function(e) {
+                var file = e.target.files[0];
+                var video = document.getElementById('video');
+                video.src = URL.createObjectURL(file);
+                video.load();
+            });
+            fileInput.click();
+        }
+        function loadAudio() {
+            var fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = 'audio/*';
+            fileInput.addEventListener('change', function(e) {
+                var file = e.target.files[0];
+                var audio = document.getElementById('audio');
+                audio.src = URL.createObjectURL(file);
+                audio.load();
+            });
+            fileInput.click();
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="name" value="이름" onclick="inputNameAndNum()">
+    <input type="text" id="num" value="학번" onclick="inputNameAndNum()">
+    <br>
+    <video id="video" controls></video>
+    <br>
+    <button onclick="playVideo()">재생</button>
+    <button onclick="pauseVideo()">일시정지</button>
+    <button onclick="stopVideo()">정지</button>
+    <button onclick="loadVideo()">비디오 불러오기</button>
+    <br>
+    <audio id="audio" controls></audio>
+    <br>
+    <button onclick="playAudio()">재생</button>
+    <button onclick="pauseAudio()">일시정지</button>
+    <button onclick="stopAudio()">정지</button>
+    <button onclick="loadAudio()">오디오 불러오기</button>
+</body>
+
+</html>
